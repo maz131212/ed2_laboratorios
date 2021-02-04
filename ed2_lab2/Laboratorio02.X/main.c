@@ -103,8 +103,8 @@ void setup(void) {
     PORTD = 0;  // TODO D EMPIEZA APAGADO
     ANSEL = 0;  // PARA NO USARLO COMO ANALOGICO
     ANSELH = 0; // PARA NO USARLO COMO ANALOGICO
-    //PORTBbits.RB0 = 1; //Puerto RB0 como input
-    //PORTBbits.RB1 = 1; //Puerto RB1 como input
+    PORTBbits.RB0 = 1; //Puerto RB0 como input
+    PORTBbits.RB1 = 1; //Puerto RB1 como input
 }
 
 //******************************************************************************
@@ -142,5 +142,5 @@ void count_leds(void)
 }
 
 
-
+}
 
