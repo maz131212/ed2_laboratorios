@@ -81,7 +81,10 @@ void main(void)
         {
             b_dec = 0;       
             count--;          
-        }                    
+        }       
+        
+        count_leds();
+        
     }
 }
 
@@ -112,28 +115,28 @@ void count_leds(void)
 {
     switch(count){              
         case 1:                  
-            PORTCbits.RC0 = 1;  
+            PORTAbits.RA0 = 1;  
             break;
         case 2:
-            PORTCbits.RC1 = 1;
+            PORTAbits.RA1 = 1;
             break;
         case 3:
-            PORTCbits.RC2 = 1;
+            PORTAbits.RA2 = 1;
             break;
         case 4:
-            PORTCbits.RC3 = 1;
+            PORTAbits.RA3 = 1;
             break;
         case 5:
-            PORTCbits.RC4 = 1;
+            PORTAbits.RA4 = 1;
             break; 
         case 6:
-            PORTCbits.RC5 = 1;
+            PORTAbits.RA5 = 1;
             break;
         case 7:
-            PORTCbits.RC6 = 1;
+            PORTAbits.RA6 = 1;
             break;
         case 8:
-            PORTCbits.RC7 = 1;
+            PORTAbits.RA7 = 1;
             break;
     
 }
