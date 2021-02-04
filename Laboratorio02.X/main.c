@@ -4,6 +4,7 @@
 // Fecha: 29 - enero - 2021
 //******************************************************************************
 
+
 //******************************************************************************
 // Importación de Librerías
 //******************************************************************************
@@ -37,22 +38,22 @@
 // Variables
 //******************************************************************************
 uint8_t flagc;      //banderas para el anti rebote de cada una de los botones
-uint8_t cont;       //contador de pulsos de cada boton
-uint8_t b_up;
-uint8_t b_down;
+uint8_t count;       //contador de pulsos de cada boton
+uint8_t b_inc;
+uint8_t b_dec;
 
 //******************************************************************************
 // Prototipos de funciones
 //******************************************************************************
 void setup(void);       //Funcion para definir la configuracion inicial
-void count_up(void);
-void count_down(void);
+void count_leds(void);
 
 //******************************************************************************
 // Ciclo Principal
 //******************************************************************************
 
-void main(void) {
+void main(void) 
+{
 
     setup();
 
@@ -60,8 +61,27 @@ void main(void) {
     // Loop Principal
     //**************************************************************************
 
-    while (1) {
+    while (1) 
+    {
+        if (PORTBbits.RB0 == 1) 
+        {   
+            b_inc = 1;              
+        }
+        if (PORTBbits.RB0 == 0 && b_inc == 1) 
+        { 
+            b_inc = 0;      
+            count++;        
+        }                   
         
+        if (PORTBbits.RB1 == 1) 
+        {   
+            b_dec = 1;              
+        }
+        if (PORTBbits.RB1 == 0 && b_dec == 1) 
+        {
+            b_dec = 0;       
+            count--;          
+        }                    
     }
 }
 
@@ -70,30 +90,54 @@ void main(void) {
 //******************************************************************************
 
 void setup(void) {
-    TRISE = 0; // todos las salidas del puerto E estan en OUTPUT
-    PORTE = 0; // Todos los puertos de E empiezan apagados
-    TRISC = 0; // TODO C esta en OUTPUT
-    PORTC = 0; // TODO C empieza apagado
-    TRISA = 0; // TODO A OUTPUT
-    PORTA = 0; // TODA A APAGADO
-    TRISD = 0; // TODO D OUTPUT
-    PORTD = 0; // TODO D EMPIEZA APAGADO
-    ANSEL = 0; // PARA NO USARLO COMO ANALOGICO
+    TRISE = 0;  // todos las salidas del puerto E estan en OUTPUT
+    PORTE = 0;  // Todos los puertos de E empiezan apagados
+    TRISC = 0;  // TODO C esta en OUTPUT
+    PORTC = 0;  // TODO C empieza apagado
+    TRISA = 0;  // TODO A OUTPUT
+    PORTA = 0;  // TODA A APAGADO
+    TRISD = 0;  // TODO D OUTPUT
+    PORTD = 0;  // TODO D EMPIEZA APAGADO
+    ANSEL = 0;  // PARA NO USARLO COMO ANALOGICO
     ANSELH = 0; // PARA NO USARLO COMO ANALOGICO
-    PORTBbits.RB0 = 1; //Puerto RB0 como input
-    PORTBbits.RB1 = 1; 
+    //PORTBbits.RB0 = 1; //Puerto RB0 como input
+    //PORTBbits.RB1 = 1; //Puerto RB1 como input
 }
 
 //******************************************************************************
 // Funciones
 //******************************************************************************
 
-void count_up(void) {
-    }
+void count_leds(void) 
+{
+    switch(count){              
+        case 1:                  
+            PORTCbits.RC0 = 1;  
+            break;
+        case 2:
+            PORTCbits.RC1 = 1;
+            break;
+        case 3:
+            PORTCbits.RC2 = 1;
+            break;
+        case 4:
+            PORTCbits.RC3 = 1;
+            break;
+        case 5:
+            PORTCbits.RC4 = 1;
+            break; 
+        case 6:
+            PORTCbits.RC5 = 1;
+            break;
+        case 7:
+            PORTCbits.RC6 = 1;
+            break;
+        case 8:
+            PORTCbits.RC7 = 1;
+            break;
+    
+}
 
-void count_down(void) {
-    
-    }
-    
+
 
 
