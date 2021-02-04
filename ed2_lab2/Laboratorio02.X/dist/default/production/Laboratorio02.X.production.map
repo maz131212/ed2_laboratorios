@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.31\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\Laboratorio02.X.production.sym \
   --cmf=dist/default/production\Laboratorio02.X.production.cmf -z -Q16F887 \
-  -oC:\Users\Axel\AppData\Local\Temp\sc3c.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\Axel\AppData\Local\Temp\s108.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/Laboratorio02.X.production.map -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ASTACK=0110h-016Fh -pstack=STACK \
   -ACODE=00h-07FFhx4 -ASTRCODE=00h-01FFFh -ASTRING=00h-0FFhx32 \
@@ -18,7 +18,7 @@ Linker command line:
   -AEEDATA=00h-0FFh/02100h -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 \
   -DSTRCODE=2 -DSTRING=2 -DCONST=2 -DENTRY=2 \
   -preset_vec=00h,intentry,init,end_init -ppowerup=CODE -pcinit=CODE \
-  -pfunctab=ENTRY -k C:\Users\Axel\AppData\Local\Temp\sc3c.o \
+  -pfunctab=ENTRY -k C:\Users\Axel\AppData\Local\Temp\s108.o \
   dist/default/production\Laboratorio02.X.production.o 
 
 Object code version is 3.11
@@ -28,14 +28,14 @@ Machine type is 16F887
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Axel\AppData\Local\Temp\sc3c.o
+C:\Users\Axel\AppData\Local\Temp\s108.o
                 end_init                              0        0        3        0       0
                 config                             2007     2007        2        0       4
 dist/default/production\Laboratorio02.X.production.o
                 cinit                               7F8      7F8        8      FF0       0
                 config                             2007     2007        2        0       4
                 text2                               7B4      7B4       44      F68       0
-                text1                               761      761       1D      EC2       0
+                text1                               75D      75D       21      EBA       0
                 maintext                            77E      77E       36      EFC       0
                 cstackCOMMON                         74       74        3       70       1
                 bssCOMMON                            70       70        4       70       1
@@ -47,7 +47,7 @@ TOTAL           Name                               Link     Load   Length     Sp
                 end_init                              0        0        3         0
                 cinit                               7F8      7F8        8         0
                 text2                               7B4      7B4       44         0
-                text1                               761      761       1D         0
+                text1                               75D      75D       21         0
                 maintext                            77E      77E       36         0
 
         CLASS   STRCODE        
@@ -96,7 +96,7 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
 
                 reset_vec                      000000  000003  000003         0       0  CODE        2
                 bssCOMMON                      000070  000007  000077        70       1  COMMON      1
-                text1                          000761  00001D  00077E       EC2       0  CODE        2
+                text1                          00075D  000021  00077E       EBA       0  CODE        2
                 maintext                       00077E  000036  0007B4       EFC       0  CODE        2
                 text2                          0007B4  000044  0007F8       F68       0  CODE        2
                 cinit                          0007F8  000008  000800       FF0       0  CODE        2
@@ -109,13 +109,13 @@ UNUSED ADDRESS RANGES
         BANK1            00A0-00EF             50           1
         BANK2            0110-016F             60           1
         BANK3            0190-01EF             60           1
-        CODE             0003-0760            75E           2
+        CODE             0003-075C            75A           2
                          0800-1FFF            800
         COMMON           0077-007D              7           1
-        CONST            0003-0760            100           2
+        CONST            0003-075C            100           2
                          0800-1FFF            100
         EEDATA           2100-21FF            100           2
-        ENTRY            0003-0760            100           2
+        ENTRY            0003-075C            100           2
                          0800-1FFF            100
         IDLOC            2000-2003              4           2
         RAM              0020-006F             50           1
@@ -127,9 +127,9 @@ UNUSED ADDRESS RANGES
         SFR2             0100-010F             10           1
         SFR3             0180-018F             10           1
         STACK            0110-016F             60           1
-        STRCODE          0003-0760            75E           2
+        STRCODE          0003-075C            75A           2
                          0800-1FFF           1800
-        STRING           0003-0760            100           2
+        STRING           0003-075C            100           2
                          0800-1FFF            100
 
                                   Symbol Table
@@ -229,7 +229,7 @@ __initialization         cinit        07F8
 __pbssCOMMON             bssCOMMON    0070
 __pcstackCOMMON          cstackCOMMON 0074
 __pmaintext              maintext     077E
-__ptext1                 text1        0761
+__ptext1                 text1        075D
 __ptext2                 text2        07B4
 __size_of_count_leds     (abs)        0000
 __size_of_main           (abs)        0000
@@ -239,7 +239,7 @@ _b_inc                   bssCOMMON    0071
 _count                   bssCOMMON    0072
 _count_leds              text2        07B4
 _main                    maintext     077E
-_setup                   text1        0761
+_setup                   text1        075D
 btemp                    (abs)        007E
 end_of_initialization    cinit        07FC
 intlevel0                functab      0000
@@ -355,8 +355,8 @@ shared estimated size: 4
 
 main.c
 		_main          		CODE           	077E	0000	54
-		_setup         		CODE           	0761	0000	29
+		_setup         		CODE           	075D	0000	33
 		_count_leds    		CODE           	07B4	0000	68
 
-main.c estimated size: 151
+main.c estimated size: 155
 

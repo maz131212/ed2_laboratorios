@@ -13,13 +13,13 @@
 %PSECTS
 $dist/default/production\Laboratorio02.X.production.o
 cinit CODE 0 7F8 7F8 8 2
-text1 CODE 0 761 761 1D 2
+text1 CODE 0 75D 75D 21 2
 text2 CODE 0 7B4 7B4 44 2
 maintext CODE 0 77E 77E 36 2
 cstackCOMMON COMMON 1 74 74 3 1
 bssCOMMON COMMON 1 70 70 4 1
 config CONFIG 4 2007 2007 2 2
-$C:\Users\Axel\AppData\Local\Temp\sc3c.o
+$C:\Users\Axel\AppData\Local\Temp\s108.o
 end_init CODE 0 0 0 3 2
 config CONFIG 4 2007 2007 2 2
 # %UNUSED Section
@@ -36,13 +36,13 @@ BANK0 20-6F 1
 BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
-CONST 3-760 2
+CONST 3-75C 2
 CONST 800-1FFF 2
-ENTRY 3-760 2
+ENTRY 3-75C 2
 ENTRY 800-1FFF 2
 IDLOC 2000-2003 2
 STACK 110-16F 1
-CODE 3-760 2
+CODE 3-75C 2
 CODE 800-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
@@ -50,9 +50,9 @@ SFR2 100-10F 1
 SFR3 180-18F 1
 COMMON 77-7D 1
 EEDATA 2100-21FF 2
-STRCODE 3-760 2
+STRCODE 3-75C 2
 STRCODE 800-1FFF 2
-STRING 3-760 2
+STRING 3-75C 2
 STRING 800-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
@@ -68,15 +68,15 @@ STRING 800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Laboratorio02.X.production.o
-7F8 cinit CODE >452:C:\Users\Axel\AppData\Local\Temp\sc3c.s
-7F8 cinit CODE >455:C:\Users\Axel\AppData\Local\Temp\sc3c.s
-7F8 cinit CODE >475:C:\Users\Axel\AppData\Local\Temp\sc3c.s
-7F9 cinit CODE >476:C:\Users\Axel\AppData\Local\Temp\sc3c.s
-7FA cinit CODE >477:C:\Users\Axel\AppData\Local\Temp\sc3c.s
-7FB cinit CODE >478:C:\Users\Axel\AppData\Local\Temp\sc3c.s
-7FC cinit CODE >484:C:\Users\Axel\AppData\Local\Temp\sc3c.s
-7FC cinit CODE >486:C:\Users\Axel\AppData\Local\Temp\sc3c.s
-7FD cinit CODE >487:C:\Users\Axel\AppData\Local\Temp\sc3c.s
+7F8 cinit CODE >452:C:\Users\Axel\AppData\Local\Temp\s108.s
+7F8 cinit CODE >455:C:\Users\Axel\AppData\Local\Temp\s108.s
+7F8 cinit CODE >475:C:\Users\Axel\AppData\Local\Temp\s108.s
+7F9 cinit CODE >476:C:\Users\Axel\AppData\Local\Temp\s108.s
+7FA cinit CODE >477:C:\Users\Axel\AppData\Local\Temp\s108.s
+7FB cinit CODE >478:C:\Users\Axel\AppData\Local\Temp\s108.s
+7FC cinit CODE >484:C:\Users\Axel\AppData\Local\Temp\s108.s
+7FC cinit CODE >486:C:\Users\Axel\AppData\Local\Temp\s108.s
+7FD cinit CODE >487:C:\Users\Axel\AppData\Local\Temp\s108.s
 7B4 text2 CODE >114:C:\Users\Axel\Documents\GitHub\ed2_laboratorios\ed2_lab2\Laboratorio02.X\main.c
 7B4 text2 CODE >116:C:\Users\Axel\Documents\GitHub\ed2_laboratorios\ed2_lab2\Laboratorio02.X\main.c
 7B5 text2 CODE >117:C:\Users\Axel\Documents\GitHub\ed2_laboratorios\ed2_lab2\Laboratorio02.X\main.c
@@ -105,17 +105,19 @@ $dist/default/production\Laboratorio02.X.production.o
 7D4 text2 CODE >140:C:\Users\Axel\Documents\GitHub\ed2_laboratorios\ed2_lab2\Laboratorio02.X\main.c
 7D5 text2 CODE >142:C:\Users\Axel\Documents\GitHub\ed2_laboratorios\ed2_lab2\Laboratorio02.X\main.c
 7F7 text2 CODE >145:C:\Users\Axel\Documents\GitHub\ed2_laboratorios\ed2_lab2\Laboratorio02.X\main.c
-761 text1 CODE >95:C:\Users\Axel\Documents\GitHub\ed2_laboratorios\ed2_lab2\Laboratorio02.X\main.c
-761 text1 CODE >96:C:\Users\Axel\Documents\GitHub\ed2_laboratorios\ed2_lab2\Laboratorio02.X\main.c
-764 text1 CODE >97:C:\Users\Axel\Documents\GitHub\ed2_laboratorios\ed2_lab2\Laboratorio02.X\main.c
-767 text1 CODE >98:C:\Users\Axel\Documents\GitHub\ed2_laboratorios\ed2_lab2\Laboratorio02.X\main.c
-76A text1 CODE >99:C:\Users\Axel\Documents\GitHub\ed2_laboratorios\ed2_lab2\Laboratorio02.X\main.c
-76D text1 CODE >100:C:\Users\Axel\Documents\GitHub\ed2_laboratorios\ed2_lab2\Laboratorio02.X\main.c
-770 text1 CODE >101:C:\Users\Axel\Documents\GitHub\ed2_laboratorios\ed2_lab2\Laboratorio02.X\main.c
-773 text1 CODE >102:C:\Users\Axel\Documents\GitHub\ed2_laboratorios\ed2_lab2\Laboratorio02.X\main.c
-776 text1 CODE >103:C:\Users\Axel\Documents\GitHub\ed2_laboratorios\ed2_lab2\Laboratorio02.X\main.c
-779 text1 CODE >104:C:\Users\Axel\Documents\GitHub\ed2_laboratorios\ed2_lab2\Laboratorio02.X\main.c
-77C text1 CODE >105:C:\Users\Axel\Documents\GitHub\ed2_laboratorios\ed2_lab2\Laboratorio02.X\main.c
+75D text1 CODE >95:C:\Users\Axel\Documents\GitHub\ed2_laboratorios\ed2_lab2\Laboratorio02.X\main.c
+75D text1 CODE >96:C:\Users\Axel\Documents\GitHub\ed2_laboratorios\ed2_lab2\Laboratorio02.X\main.c
+760 text1 CODE >97:C:\Users\Axel\Documents\GitHub\ed2_laboratorios\ed2_lab2\Laboratorio02.X\main.c
+763 text1 CODE >98:C:\Users\Axel\Documents\GitHub\ed2_laboratorios\ed2_lab2\Laboratorio02.X\main.c
+766 text1 CODE >99:C:\Users\Axel\Documents\GitHub\ed2_laboratorios\ed2_lab2\Laboratorio02.X\main.c
+769 text1 CODE >100:C:\Users\Axel\Documents\GitHub\ed2_laboratorios\ed2_lab2\Laboratorio02.X\main.c
+76C text1 CODE >101:C:\Users\Axel\Documents\GitHub\ed2_laboratorios\ed2_lab2\Laboratorio02.X\main.c
+76F text1 CODE >102:C:\Users\Axel\Documents\GitHub\ed2_laboratorios\ed2_lab2\Laboratorio02.X\main.c
+772 text1 CODE >103:C:\Users\Axel\Documents\GitHub\ed2_laboratorios\ed2_lab2\Laboratorio02.X\main.c
+775 text1 CODE >104:C:\Users\Axel\Documents\GitHub\ed2_laboratorios\ed2_lab2\Laboratorio02.X\main.c
+778 text1 CODE >105:C:\Users\Axel\Documents\GitHub\ed2_laboratorios\ed2_lab2\Laboratorio02.X\main.c
+779 text1 CODE >106:C:\Users\Axel\Documents\GitHub\ed2_laboratorios\ed2_lab2\Laboratorio02.X\main.c
+77C text1 CODE >107:C:\Users\Axel\Documents\GitHub\ed2_laboratorios\ed2_lab2\Laboratorio02.X\main.c
 77D text1 CODE >108:C:\Users\Axel\Documents\GitHub\ed2_laboratorios\ed2_lab2\Laboratorio02.X\main.c
 77E maintext CODE >55:C:\Users\Axel\Documents\GitHub\ed2_laboratorios\ed2_lab2\Laboratorio02.X\main.c
 77E maintext CODE >58:C:\Users\Axel\Documents\GitHub\ed2_laboratorios\ed2_lab2\Laboratorio02.X\main.c
@@ -152,31 +154,31 @@ __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 4010 0 ABS 0 - -
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\Axel\AppData\Local\Temp\sc3c.o
+___sp 0 0 STACK 2 stack C:\Users\Axel\AppData\Local\Temp\s108.o
 _main EFC 0 CODE 0 maintext dist/default/production\Laboratorio02.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Laboratorio02.X.production.o
 __size_of_count_leds 0 0 ABS 0 - dist/default/production\Laboratorio02.X.production.o
-start 0 0 CODE 0 init C:\Users\Axel\AppData\Local\Temp\sc3c.o
+start 0 0 CODE 0 init C:\Users\Axel\AppData\Local\Temp\s108.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Laboratorio02.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\Axel\AppData\Local\Temp\sc3c.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\Axel\AppData\Local\Temp\sc3c.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\Axel\AppData\Local\Temp\sc3c.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\Axel\AppData\Local\Temp\sc3c.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\Axel\AppData\Local\Temp\sc3c.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\Axel\AppData\Local\Temp\sc3c.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\Axel\AppData\Local\Temp\s108.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\Axel\AppData\Local\Temp\s108.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\Axel\AppData\Local\Temp\s108.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\Axel\AppData\Local\Temp\s108.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\Axel\AppData\Local\Temp\s108.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\Axel\AppData\Local\Temp\s108.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 wtemp0 7E 0 ABS 0 - dist/default/production\Laboratorio02.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
 _ANSELH 189 0 ABS 0 - dist/default/production\Laboratorio02.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-___stackhi 0 0 ABS 0 - C:\Users\Axel\AppData\Local\Temp\sc3c.o
-___stacklo 0 0 ABS 0 - C:\Users\Axel\AppData\Local\Temp\sc3c.o
+___stackhi 0 0 ABS 0 - C:\Users\Axel\AppData\Local\Temp\s108.o
+___stacklo 0 0 ABS 0 - C:\Users\Axel\AppData\Local\Temp\s108.o
 __size_of_setup 0 0 ABS 0 - dist/default/production\Laboratorio02.X.production.o
 start_initialization FF0 0 CODE 0 cinit dist/default/production\Laboratorio02.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\Axel\AppData\Local\Temp\sc3c.o
+___int_sp 0 0 STACK 2 stack C:\Users\Axel\AppData\Local\Temp\s108.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -216,7 +218,7 @@ __S1 77 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 __Lintentry 0 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\Axel\AppData\Local\Temp\sc3c.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\Axel\AppData\Local\Temp\s108.o
 _count_leds F68 0 CODE 0 text2 dist/default/production\Laboratorio02.X.production.o
 __pmaintext EFC 0 CODE 0 maintext dist/default/production\Laboratorio02.X.production.o
 __Lcommon 0 0 ABS 0 common -
@@ -234,7 +236,7 @@ __Hintentry 0 0 CODE 0 intentry -
 __Lstrings 0 0 ABS 0 strings -
 __end_of_count_leds FF0 0 CODE 0 text2 dist/default/production\Laboratorio02.X.production.o
 __Hreset_vec 0 0 CODE 0 reset_vec -
-__ptext1 EC2 0 CODE 0 text1 dist/default/production\Laboratorio02.X.production.o
+__ptext1 EBA 0 CODE 0 text1 dist/default/production\Laboratorio02.X.production.o
 __ptext2 F68 0 CODE 0 text2 dist/default/production\Laboratorio02.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
@@ -260,7 +262,7 @@ __Lram 0 0 ABS 0 ram -
 _b_dec 70 0 COMMON 1 bssCOMMON dist/default/production\Laboratorio02.X.production.o
 _b_inc 71 0 COMMON 1 bssCOMMON dist/default/production\Laboratorio02.X.production.o
 _count 72 0 COMMON 1 bssCOMMON dist/default/production\Laboratorio02.X.production.o
-_setup EC2 0 CODE 0 text1 dist/default/production\Laboratorio02.X.production.o
+_setup EBA 0 CODE 0 text1 dist/default/production\Laboratorio02.X.production.o
 __initialization FF0 0 CODE 0 cinit dist/default/production\Laboratorio02.X.production.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
@@ -288,7 +290,7 @@ __initialization FF0 0 CODE 0 cinit dist/default/production\Laboratorio02.X.prod
 # All other numeric quantities are in decimal.
 %SEGMENTS
 cinit 0 7F8 FF0 8 2
-text1 0 761 EC2 1D 2
+text1 0 75D EBA 21 2
 text2 0 7B4 F68 44 2
 maintext 0 77E EFC 36 2
 reset_vec 0 0 0 3 2

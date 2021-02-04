@@ -63,21 +63,21 @@ void main(void)
 
     while (1) 
     {
-        if (PORTBbits.RB0 == 1) 
+        if (PORTBbits.RB0 == 0) 
         {   
             b_inc = 1;              
         }
-        if (PORTBbits.RB0 == 0 && b_inc == 1) 
+        if (PORTBbits.RB0 == 1 && b_inc == 1) 
         { 
             b_inc = 0;      
             count++;        
         }                   
         
-        if (PORTBbits.RB1 == 1) 
+        if (PORTBbits.RB1 == 0) 
         {   
             b_dec = 1;              
         }
-        if (PORTBbits.RB1 == 0 && b_dec == 1) 
+        if (PORTBbits.RB1 == 1 && b_dec == 1) 
         {
             b_dec = 0;       
             count--;          
