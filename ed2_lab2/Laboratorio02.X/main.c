@@ -49,6 +49,16 @@ void setup(void);       //Funcion para definir la configuracion inicial
 void count_leds(void);
 
 //******************************************************************************
+// Vector de interrupción
+//******************************************************************************
+void __interrupt() ISR(void){
+    if (INTCONbits.RBIF)   //bandera para indicar si hubo un cambio en PORTB 
+    {
+           INTCONbits.RBIF = 0; 
+    }
+}
+
+//******************************************************************************
 // Ciclo Principal
 //******************************************************************************
 
@@ -63,27 +73,29 @@ void main(void)
 
     while (1) 
     {
-        if (PORTBbits.RB0 == 0) 
+        if (PORTBbits.RB0 == 1) 
         {   
             b_inc = 1;              
         }
-        if (PORTBbits.RB0 == 1 && b_inc == 1) 
+        if (PORTBbits.RB0 == 0 && b_inc == 1) 
         { 
             b_inc = 0;      
             count++;        
         }                   
         
-        if (PORTBbits.RB1 == 0) 
+        if (PORTBbits.RB1 == 1) 
         {   
             b_dec = 1;              
         }
-        if (PORTBbits.RB1 == 1 && b_dec == 1) 
+        if (PORTBbits.RB1 == 0 && b_dec == 1) 
         {
             b_dec = 0;       
             count--;          
-        }       
+        }  
+       
         
         count_leds();
+        
         
     }
 }
@@ -95,16 +107,27 @@ void main(void)
 void setup(void) {
     TRISE = 0;  // todos las salidas del puerto E estan en OUTPUT
     PORTE = 0;  // Todos los puertos de E empiezan apagados
+    
     TRISC = 0;  // TODO C esta en OUTPUT
     PORTC = 0;  // TODO C empieza apagado
+    
     TRISA = 0;  // TODO A OUTPUT
     PORTA = 0;  // TODA A APAGADO
+    
+    TRISB = 0;  // TODO B OUTPUT
+    PORTB = 0;  // TODA B APAGADO
+    IOCBbits.IOCB0 = 1; //Interrupt-on-change enabled
+    IOCBbits.IOCB1 = 1; //Interrupt-on-change enabled
+    INTCONbits.GIE = 1; //Enables all unmasked interrupts
+    INTCONbits.RBIE = 1;
+    
     TRISD = 0;  // TODO D OUTPUT
     PORTD = 0;  // TODO D EMPIEZA APAGADO
+    
     ANSEL = 0;  // PARA NO USARLO COMO ANALOGICO
     ANSELH = 0; // PARA NO USARLO COMO ANALOGICO
-    PORTBbits.RB0 = 1; //Puerto RB0 como input
-    PORTBbits.RB1 = 1; //Puerto RB1 como input
+    
+    
 }
 
 //******************************************************************************
@@ -114,33 +137,92 @@ void setup(void) {
 void count_leds(void) 
 {
     switch(count){              
-        case 1:                  
-            PORTAbits.RA0 = 1;  
+        case 1:                 
+            PORTAbits.RA0 = 1;
+            PORTAbits.RA1 = 0;
+            PORTAbits.RA2 = 0;
+            PORTAbits.RA3 = 0;
+            PORTAbits.RA4 = 0;
+            PORTAbits.RA5 = 0;
+            PORTAbits.RA6 = 0;
+            PORTAbits.RA7 = 0;
             break;
         case 2:
+            PORTAbits.RA0 = 0;
             PORTAbits.RA1 = 1;
+            PORTAbits.RA2 = 0;
+            PORTAbits.RA3 = 0;
+            PORTAbits.RA4 = 0;
+            PORTAbits.RA5 = 0;
+            PORTAbits.RA6 = 0;
+            PORTAbits.RA7 = 0;
             break;
         case 3:
+            PORTAbits.RA0 = 0;
+            PORTAbits.RA1 = 0;
             PORTAbits.RA2 = 1;
+            PORTAbits.RA3 = 0;
+            PORTAbits.RA4 = 0;
+            PORTAbits.RA5 = 0;
+            PORTAbits.RA6 = 0;
+            PORTAbits.RA7 = 0;
             break;
         case 4:
+            PORTAbits.RA0 = 0;
+            PORTAbits.RA1 = 0;
+            PORTAbits.RA2 = 0;
             PORTAbits.RA3 = 1;
+            PORTAbits.RA4 = 0;
+            PORTAbits.RA5 = 0;
+            PORTAbits.RA6 = 0;
+            PORTAbits.RA7 = 0;
             break;
         case 5:
+            PORTAbits.RA0 = 0;
+            PORTAbits.RA1 = 0;
+            PORTAbits.RA2 = 0;
+            PORTAbits.RA3 = 0;
             PORTAbits.RA4 = 1;
-            break; 
+            PORTAbits.RA5 = 0;
+            PORTAbits.RA6 = 0;
+            PORTAbits.RA7 = 0;
         case 6:
+            PORTAbits.RA0 = 0;
+            PORTAbits.RA1 = 0;
+            PORTAbits.RA2 = 0;
+            PORTAbits.RA3 = 0;
+            PORTAbits.RA4 = 0;
             PORTAbits.RA5 = 1;
+            PORTAbits.RA6 = 0;
+            PORTAbits.RA7 = 0;
             break;
         case 7:
-            PORTAbits.RA6 = 1;
+            PORTAbits.RA0 = 0;
+            PORTAbits.RA1 = 0;
+            PORTAbits.RA2 = 0;
+            PORTAbits.RA3 = 0;
+            PORTAbits.RA4 = 0;
+            PORTAbits.RA5 = 1;
+            PORTAbits.RA6 = 0;
+            PORTAbits.RA7 = 0;
             break;
         case 8:
-            PORTAbits.RA7 = 1;
+            PORTAbits.RA0 = 0;
+            PORTAbits.RA1 = 0;
+            PORTAbits.RA2 = 0;
+            PORTAbits.RA3 = 0;
+            PORTAbits.RA4 = 0;
+            PORTAbits.RA5 = 1;
+            PORTAbits.RA6 = 0;
+            PORTAbits.RA7 = 0;
             break;
+            
+        }
     
+    
+
 }
 
 
-}
+
 
