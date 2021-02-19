@@ -2688,6 +2688,8 @@ void setup(void) {
     ANSEL = 0b00000010;
     TRISA = 0b00000010;
     PORTA = 0;
+    TRISC = 0;
+    PORTC = 0;
 
 
     INTCONbits.GIE = 1;
@@ -2710,6 +2712,7 @@ void setup(void) {
 
 
 void leer(void){
-
-
+    pot = ADRESH;
+    PORTC = pot;
+    ADCON0bits.GO_DONE = 1;
 }

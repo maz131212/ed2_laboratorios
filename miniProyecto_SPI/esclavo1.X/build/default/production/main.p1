@@ -38,6 +38,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "166
 [; ;/Applications/microchip/mplabx/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f887.h: 166: extern volatile unsigned char PORTA __attribute__((address(0x005)));
 [v _PORTA `Vuc ~T0 @X0 0 e@5 ]
+"1540
+[; ;/Applications/microchip/mplabx/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f887.h: 1540: extern volatile unsigned char TRISC __attribute__((address(0x087)));
+[v _TRISC `Vuc ~T0 @X0 0 e@135 ]
+"290
+[; ;/Applications/microchip/mplabx/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f887.h: 290: extern volatile unsigned char PORTC __attribute__((address(0x007)));
+[v _PORTC `Vuc ~T0 @X0 0 e@7 ]
 "465
 [; ;/Applications/microchip/mplabx/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f887.h: 465:     struct {
 [s S16 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -75,6 +81,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2991
 [; ;/Applications/microchip/mplabx/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f887.h: 2991: extern volatile ADCON1bits_t ADCON1bits __attribute__((address(0x09F)));
 [v _ADCON1bits `VS115 ~T0 @X0 0 e@159 ]
+"1238
+[; ;/Applications/microchip/mplabx/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f887.h: 1238: extern volatile unsigned char ADRESH __attribute__((address(0x01E)));
+[v _ADRESH `Vuc ~T0 @X0 0 e@30 ]
 "54 /Applications/microchip/mplabx/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f887.h
 [; ;/Applications/microchip/mplabx/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f887.h: 54: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
@@ -386,47 +395,62 @@ Version 4.0 HI-TECH Software Intermediate Code
 "99
 [; ;main.c: 99:     PORTA = 0;
 [e = _PORTA -> -> 0 `i `uc ]
-"102
-[; ;main.c: 102:     INTCONbits.GIE = 1;
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"103
-[; ;main.c: 103:     INTCONbits.PEIE = 1;
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+"100
+[; ;main.c: 100:     TRISC = 0;
+[e = _TRISC -> -> 0 `i `uc ]
+"101
+[; ;main.c: 101:     PORTC = 0;
+[e = _PORTC -> -> 0 `i `uc ]
 "104
-[; ;main.c: 104:     PIE1bits.ADIE = 1;
+[; ;main.c: 104:     INTCONbits.GIE = 1;
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+"105
+[; ;main.c: 105:     INTCONbits.PEIE = 1;
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+"106
+[; ;main.c: 106:     PIE1bits.ADIE = 1;
 [e = . . _PIE1bits 0 6 -> -> 1 `i `uc ]
-"107
-[; ;main.c: 107:     ADCON0bits.CHS = 1;
-[e = . . _ADCON0bits 0 2 -> -> 1 `i `uc ]
-"108
-[; ;main.c: 108:     ADCON1bits.VCFG0 = 0;
-[e = . . _ADCON1bits 0 1 -> -> 0 `i `uc ]
 "109
-[; ;main.c: 109:     ADCON1bits.VCFG1 = 0;
-[e = . . _ADCON1bits 0 2 -> -> 0 `i `uc ]
+[; ;main.c: 109:     ADCON0bits.CHS = 1;
+[e = . . _ADCON0bits 0 2 -> -> 1 `i `uc ]
 "110
-[; ;main.c: 110:     ADCON0bits.ADCS = 3;
-[e = . . _ADCON0bits 0 3 -> -> 3 `i `uc ]
+[; ;main.c: 110:     ADCON1bits.VCFG0 = 0;
+[e = . . _ADCON1bits 0 1 -> -> 0 `i `uc ]
 "111
-[; ;main.c: 111:     ADCON1bits.ADFM = 0;
-[e = . . _ADCON1bits 0 4 -> -> 0 `i `uc ]
+[; ;main.c: 111:     ADCON1bits.VCFG1 = 0;
+[e = . . _ADCON1bits 0 2 -> -> 0 `i `uc ]
 "112
-[; ;main.c: 112:     ADCON0bits.GO_DONE = 1;
-[e = . . _ADCON0bits 3 1 -> -> 1 `i `uc ]
+[; ;main.c: 112:     ADCON0bits.ADCS = 3;
+[e = . . _ADCON0bits 0 3 -> -> 3 `i `uc ]
 "113
-[; ;main.c: 113:     ADCON0bits.ADON = 1;
-[e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
+[; ;main.c: 113:     ADCON1bits.ADFM = 0;
+[e = . . _ADCON1bits 0 4 -> -> 0 `i `uc ]
+"114
+[; ;main.c: 114:     ADCON0bits.GO_DONE = 1;
+[e = . . _ADCON0bits 3 1 -> -> 1 `i `uc ]
 "115
-[; ;main.c: 115: }
+[; ;main.c: 115:     ADCON0bits.ADON = 1;
+[e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
+"117
+[; ;main.c: 117: }
 [e :UE 143 ]
 }
-"121
-[; ;main.c: 121: void leer(void){
+"123
+[; ;main.c: 123: void leer(void){
 [v _leer `(v ~T0 @X0 1 ef ]
 {
 [e :U _leer ]
 [f ]
 "124
-[; ;main.c: 124: }
+[; ;main.c: 124:     pot = ADRESH;
+[e = _pot _ADRESH ]
+"125
+[; ;main.c: 125:     PORTC = pot;
+[e = _PORTC _pot ]
+"126
+[; ;main.c: 126:     ADCON0bits.GO_DONE = 1;
+[e = . . _ADCON0bits 3 1 -> -> 1 `i `uc ]
+"127
+[; ;main.c: 127: }
 [e :UE 144 ]
 }

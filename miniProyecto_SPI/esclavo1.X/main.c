@@ -97,6 +97,8 @@ void setup(void) {
     ANSEL = 0b00000010;     // RA1 como analogico / AN1
     TRISA = 0b00000010;     // RA1 como entrada 
     PORTA = 0;              // Limpiar puerto A
+    TRISC = 0;              // PORTD como salida (PRUEBA)
+    PORTC = 0;              // Limpiar PORTD (PRUEBA)
     
     //Interrupciones
     INTCONbits.GIE = 1;     // Habilitar interrupciones globales
@@ -119,6 +121,7 @@ void setup(void) {
 //******************************************************************************
 
 void leer(void){
-
-
+    pot = ADRESH;   // Los bits mas significativos
+    PORTC = pot;    // PRUEBA
+    ADCON0bits.GO_DONE = 1; // Reiniciar la conversión
 }

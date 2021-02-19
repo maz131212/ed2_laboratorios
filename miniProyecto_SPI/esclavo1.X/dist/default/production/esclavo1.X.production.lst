@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.31 build 20201012212115 
-                                                                                               Thu Feb 18 12:22:30 2021
+                                                                                               Fri Feb 19 08:19:07 2021
 
 Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1 
      1                           	processor	16F887
@@ -214,313 +214,346 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    200  0189                     	;# 
    201  018C                     	;# 
    202  018D                     	;# 
-   203  000B                     _INTCONbits	set	11
-   204  0005                     _PORTA	set	5
-   205  001F                     _ADCON0bits	set	31
-   206  009F                     _ADCON1bits	set	159
-   207  008C                     _PIE1bits	set	140
-   208  0085                     _TRISA	set	133
-   209  0188                     _ANSEL	set	392
-   210                           
-   211                           	psect	cinit
-   212  07FB                     start_initialization:	
-   213                           ; #config settings
-   214                           
-   215  07FB                     __initialization:
-   216                           
-   217                           ; Clear objects allocated to COMMON
-   218  07FB  01F0               	clrf	__pbssCOMMON& (0+127)
-   219  07FC                     end_of_initialization:	
-   220                           ;End of C runtime variable initialization code
-   221                           
-   222  07FC                     __end_of__initialization:
-   223  07FC  0183               	clrf	3
-   224  07FD  120A  118A  2FC1   	ljmp	_main	;jump to C main() function
-   225                           
-   226                           	psect	bssCOMMON
-   227  0070                     __pbssCOMMON:
-   228  0070                     _pot:
-   229  0070                     	ds	1
-   230                           
-   231                           	psect	cstackCOMMON
-   232  0000                     __pcstackCOMMON:
-   233  0000                     ?_setup:
-   234  0000                     ??_setup:	
-   235                           ; 1 bytes @ 0x0
-   236                           
-   237  0000                     ?_leer:	
+   203  001E                     _ADRESH	set	30
+   204  000B                     _INTCONbits	set	11
+   205  0007                     _PORTC	set	7
+   206  0005                     _PORTA	set	5
+   207  001F                     _ADCON0bits	set	31
+   208  009F                     _ADCON1bits	set	159
+   209  008C                     _PIE1bits	set	140
+   210  0087                     _TRISC	set	135
+   211  0085                     _TRISA	set	133
+   212  0188                     _ANSEL	set	392
+   213                           
+   214                           	psect	cinit
+   215  07FB                     start_initialization:	
+   216                           ; #config settings
+   217                           
+   218  07FB                     __initialization:
+   219                           
+   220                           ; Clear objects allocated to COMMON
+   221  07FB  01F0               	clrf	__pbssCOMMON& (0+127)
+   222  07FC                     end_of_initialization:	
+   223                           ;End of C runtime variable initialization code
+   224                           
+   225  07FC                     __end_of__initialization:
+   226  07FC  0183               	clrf	3
+   227  07FD  120A  118A  2FBB   	ljmp	_main	;jump to C main() function
+   228                           
+   229                           	psect	bssCOMMON
+   230  0070                     __pbssCOMMON:
+   231  0070                     _pot:
+   232  0070                     	ds	1
+   233                           
+   234                           	psect	cstackCOMMON
+   235  0071                     __pcstackCOMMON:
+   236  0071                     ?_setup:
+   237  0071                     ??_setup:	
    238                           ; 1 bytes @ 0x0
    239                           
-   240  0000                     ??_leer:	
+   240  0071                     ?_leer:	
    241                           ; 1 bytes @ 0x0
    242                           
-   243  0000                     ?_main:	
+   243  0071                     ??_leer:	
    244                           ; 1 bytes @ 0x0
    245                           
-   246  0000                     ??_main:	
+   246  0071                     ?_main:	
    247                           ; 1 bytes @ 0x0
    248                           
    249                           
-   250                           	psect	maintext
-   251  07C1                     __pmaintext:	
-   252                           ; 1 bytes @ 0x0
-   253 ;;
-   254 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
-   255 ;;
-   256 ;; *************** function _main *****************
-   257 ;; Defined at:
-   258 ;;		line 69 in file "main.c"
-   259 ;; Parameters:    Size  Location     Type
-   260 ;;		None
-   261 ;; Auto vars:     Size  Location     Type
-   262 ;;		None
-   263 ;; Return value:  Size  Location     Type
-   264 ;;                  1    wreg      void 
-   265 ;; Registers used:
-   266 ;;		wreg, status,2, status,0, pclath, cstack
-   267 ;; Tracked objects:
-   268 ;;		On entry : B00/0
-   269 ;;		On exit  : 0/0
-   270 ;;		Unchanged: 0/0
-   271 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-   272 ;;      Params:         0       0       0       0       0
-   273 ;;      Locals:         0       0       0       0       0
-   274 ;;      Temps:          0       0       0       0       0
-   275 ;;      Totals:         0       0       0       0       0
-   276 ;;Total ram usage:        0 bytes
-   277 ;; Hardware stack levels required when called:    1
-   278 ;; This function calls:
-   279 ;;		_leer
-   280 ;;		_setup
-   281 ;; This function is called by:
-   282 ;;		Startup code after reset
-   283 ;; This function uses a non-reentrant model
-   284 ;;
-   285                           
-   286                           
-   287                           ;psect for function _main
-   288  07C1                     _main:
-   289  07C1                     l651:	
-   290                           ;incstack = 0
-   291                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
-   292                           
-   293                           
-   294                           ;main.c: 71:     setup();
-   295  07C1  120A  118A  27D5  120A  118A  	fcall	_setup
-   296  07C6                     l653:
+   250                           ; 1 bytes @ 0x0
+   251  0071                     	ds	1
+   252  0072                     ??_main:
+   253                           
+   254                           	psect	maintext
+   255  07BB                     __pmaintext:	
+   256                           ; 1 bytes @ 0x1
+   257 ;;
+   258 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   259 ;;
+   260 ;; *************** function _main *****************
+   261 ;; Defined at:
+   262 ;;		line 69 in file "main.c"
+   263 ;; Parameters:    Size  Location     Type
+   264 ;;		None
+   265 ;; Auto vars:     Size  Location     Type
+   266 ;;		None
+   267 ;; Return value:  Size  Location     Type
+   268 ;;                  1    wreg      void 
+   269 ;; Registers used:
+   270 ;;		wreg, status,2, status,0, pclath, cstack
+   271 ;; Tracked objects:
+   272 ;;		On entry : B00/0
+   273 ;;		On exit  : 0/0
+   274 ;;		Unchanged: 0/0
+   275 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   276 ;;      Params:         0       0       0       0       0
+   277 ;;      Locals:         0       0       0       0       0
+   278 ;;      Temps:          0       0       0       0       0
+   279 ;;      Totals:         0       0       0       0       0
+   280 ;;Total ram usage:        0 bytes
+   281 ;; Hardware stack levels required when called:    1
+   282 ;; This function calls:
+   283 ;;		_leer
+   284 ;;		_setup
+   285 ;; This function is called by:
+   286 ;;		Startup code after reset
+   287 ;; This function uses a non-reentrant model
+   288 ;;
+   289                           
+   290                           
+   291                           ;psect for function _main
+   292  07BB                     _main:
+   293  07BB                     l665:	
+   294                           ;incstack = 0
+   295                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
+   296                           
    297                           
-   298                           ;main.c: 79:         if (ADCON0bits.GO_DONE == 0){
-   299  07C6  1283               	bcf	3,5	;RP0=0, select bank0
-   300  07C7  1303               	bcf	3,6	;RP1=0, select bank0
-   301  07C8  189F               	btfsc	31,1	;volatile
-   302  07C9  2FCB               	goto	u11
-   303  07CA  2FCC               	goto	u10
-   304  07CB                     u11:
-   305  07CB  2FC6               	goto	l653
-   306  07CC                     u10:
-   307  07CC                     l655:
-   308                           
-   309                           ;main.c: 80:             leer();
-   310  07CC  120A  118A  27C0  120A  118A  	fcall	_leer
-   311  07D1  2FC6               	goto	l653
-   312  07D2  120A  118A  2800   	ljmp	start
-   313  07D5                     __end_of_main:
-   314                           
-   315                           	psect	text1
-   316  07D5                     __ptext1:	
-   317 ;; *************** function _setup *****************
-   318 ;; Defined at:
-   319 ;;		line 93 in file "main.c"
-   320 ;; Parameters:    Size  Location     Type
-   321 ;;		None
-   322 ;; Auto vars:     Size  Location     Type
-   323 ;;		None
-   324 ;; Return value:  Size  Location     Type
-   325 ;;                  1    wreg      void 
-   326 ;; Registers used:
-   327 ;;		wreg, status,2, status,0
-   328 ;; Tracked objects:
-   329 ;;		On entry : 0/0
-   330 ;;		On exit  : 0/0
-   331 ;;		Unchanged: 0/0
-   332 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-   333 ;;      Params:         0       0       0       0       0
-   334 ;;      Locals:         0       0       0       0       0
-   335 ;;      Temps:          0       0       0       0       0
-   336 ;;      Totals:         0       0       0       0       0
-   337 ;;Total ram usage:        0 bytes
-   338 ;; Hardware stack levels used:    1
-   339 ;; This function calls:
-   340 ;;		Nothing
-   341 ;; This function is called by:
-   342 ;;		_main
-   343 ;; This function uses a non-reentrant model
-   344 ;;
-   345                           
-   346                           
-   347                           ;psect for function _setup
-   348  07D5                     _setup:
-   349  07D5                     l627:	
-   350                           ;incstack = 0
-   351                           ; Regs used in _setup: [wreg+status,2+status,0]
-   352                           
-   353                           
-   354                           ;main.c: 97:     ANSEL = 0b00000010;
-   355  07D5  3002               	movlw	2
-   356  07D6  1683               	bsf	3,5	;RP0=1, select bank3
-   357  07D7  1703               	bsf	3,6	;RP1=1, select bank3
-   358  07D8  0088               	movwf	8	;volatile
-   359                           
-   360                           ;main.c: 98:     TRISA = 0b00000010;
-   361  07D9  3002               	movlw	2
-   362  07DA  1683               	bsf	3,5	;RP0=1, select bank1
-   363  07DB  1303               	bcf	3,6	;RP1=0, select bank1
-   364  07DC  0085               	movwf	5	;volatile
-   365  07DD                     l629:
-   366                           
-   367                           ;main.c: 99:     PORTA = 0;
-   368  07DD  1283               	bcf	3,5	;RP0=0, select bank0
-   369  07DE  1303               	bcf	3,6	;RP1=0, select bank0
-   370  07DF  0185               	clrf	5	;volatile
-   371  07E0                     l631:
-   372                           
-   373                           ;main.c: 102:     INTCONbits.GIE = 1;
-   374  07E0  178B               	bsf	11,7	;volatile
-   375  07E1                     l633:
+   298                           ;main.c: 71:     setup();
+   299  07BB  120A  118A  27CF  120A  118A  	fcall	_setup
+   300  07C0                     l667:
+   301                           
+   302                           ;main.c: 79:         if (ADCON0bits.GO_DONE == 0){
+   303  07C0  1283               	bcf	3,5	;RP0=0, select bank0
+   304  07C1  1303               	bcf	3,6	;RP1=0, select bank0
+   305  07C2  189F               	btfsc	31,1	;volatile
+   306  07C3  2FC5               	goto	u11
+   307  07C4  2FC6               	goto	u10
+   308  07C5                     u11:
+   309  07C5  2FC0               	goto	l667
+   310  07C6                     u10:
+   311  07C6                     l669:
+   312                           
+   313                           ;main.c: 80:             leer();
+   314  07C6  120A  118A  27B1  120A  118A  	fcall	_leer
+   315  07CB  2FC0               	goto	l667
+   316  07CC  120A  118A  2800   	ljmp	start
+   317  07CF                     __end_of_main:
+   318                           
+   319                           	psect	text1
+   320  07CF                     __ptext1:	
+   321 ;; *************** function _setup *****************
+   322 ;; Defined at:
+   323 ;;		line 93 in file "main.c"
+   324 ;; Parameters:    Size  Location     Type
+   325 ;;		None
+   326 ;; Auto vars:     Size  Location     Type
+   327 ;;		None
+   328 ;; Return value:  Size  Location     Type
+   329 ;;                  1    wreg      void 
+   330 ;; Registers used:
+   331 ;;		wreg, status,2, status,0
+   332 ;; Tracked objects:
+   333 ;;		On entry : 0/0
+   334 ;;		On exit  : 0/0
+   335 ;;		Unchanged: 0/0
+   336 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   337 ;;      Params:         0       0       0       0       0
+   338 ;;      Locals:         0       0       0       0       0
+   339 ;;      Temps:          0       0       0       0       0
+   340 ;;      Totals:         0       0       0       0       0
+   341 ;;Total ram usage:        0 bytes
+   342 ;; Hardware stack levels used:    1
+   343 ;; This function calls:
+   344 ;;		Nothing
+   345 ;; This function is called by:
+   346 ;;		_main
+   347 ;; This function uses a non-reentrant model
+   348 ;;
+   349                           
+   350                           
+   351                           ;psect for function _setup
+   352  07CF                     _setup:
+   353  07CF                     l633:	
+   354                           ;incstack = 0
+   355                           ; Regs used in _setup: [wreg+status,2+status,0]
+   356                           
+   357                           
+   358                           ;main.c: 97:     ANSEL = 0b00000010;
+   359  07CF  3002               	movlw	2
+   360  07D0  1683               	bsf	3,5	;RP0=1, select bank3
+   361  07D1  1703               	bsf	3,6	;RP1=1, select bank3
+   362  07D2  0088               	movwf	8	;volatile
+   363                           
+   364                           ;main.c: 98:     TRISA = 0b00000010;
+   365  07D3  3002               	movlw	2
+   366  07D4  1683               	bsf	3,5	;RP0=1, select bank1
+   367  07D5  1303               	bcf	3,6	;RP1=0, select bank1
+   368  07D6  0085               	movwf	5	;volatile
+   369  07D7                     l635:
+   370                           
+   371                           ;main.c: 99:     PORTA = 0;
+   372  07D7  1283               	bcf	3,5	;RP0=0, select bank0
+   373  07D8  1303               	bcf	3,6	;RP1=0, select bank0
+   374  07D9  0185               	clrf	5	;volatile
+   375  07DA                     l637:
    376                           
-   377                           ;main.c: 103:     INTCONbits.PEIE = 1;
-   378  07E1  170B               	bsf	11,6	;volatile
-   379  07E2                     l635:
-   380                           
-   381                           ;main.c: 104:     PIE1bits.ADIE = 1;
-   382  07E2  1683               	bsf	3,5	;RP0=1, select bank1
-   383  07E3  1303               	bcf	3,6	;RP1=0, select bank1
-   384  07E4  170C               	bsf	12,6	;volatile
-   385  07E5                     l637:
-   386                           
-   387                           ;main.c: 107:     ADCON0bits.CHS = 1;
-   388  07E5  1283               	bcf	3,5	;RP0=0, select bank0
-   389  07E6  1303               	bcf	3,6	;RP1=0, select bank0
-   390  07E7  081F               	movf	31,w	;volatile
-   391  07E8  39C3               	andlw	-61
-   392  07E9  3804               	iorlw	4
-   393  07EA  009F               	movwf	31	;volatile
-   394  07EB                     l639:
-   395                           
-   396                           ;main.c: 108:     ADCON1bits.VCFG0 = 0;
-   397  07EB  1683               	bsf	3,5	;RP0=1, select bank1
-   398  07EC  1303               	bcf	3,6	;RP1=0, select bank1
-   399  07ED  121F               	bcf	31,4	;volatile
-   400  07EE                     l641:
-   401                           
-   402                           ;main.c: 109:     ADCON1bits.VCFG1 = 0;
-   403  07EE  129F               	bcf	31,5	;volatile
-   404  07EF                     l643:
-   405                           
-   406                           ;main.c: 110:     ADCON0bits.ADCS = 3;
-   407  07EF  30C0               	movlw	192
-   408  07F0  1283               	bcf	3,5	;RP0=0, select bank0
-   409  07F1  1303               	bcf	3,6	;RP1=0, select bank0
-   410  07F2  049F               	iorwf	31,f	;volatile
-   411  07F3                     l645:
-   412                           
-   413                           ;main.c: 111:     ADCON1bits.ADFM = 0;
-   414  07F3  1683               	bsf	3,5	;RP0=1, select bank1
-   415  07F4  1303               	bcf	3,6	;RP1=0, select bank1
-   416  07F5  139F               	bcf	31,7	;volatile
-   417  07F6                     l647:
-   418                           
-   419                           ;main.c: 112:     ADCON0bits.GO_DONE = 1;
-   420  07F6  1283               	bcf	3,5	;RP0=0, select bank0
-   421  07F7  1303               	bcf	3,6	;RP1=0, select bank0
-   422  07F8  149F               	bsf	31,1	;volatile
-   423  07F9                     l649:
-   424                           
-   425                           ;main.c: 113:     ADCON0bits.ADON = 1;
-   426  07F9  141F               	bsf	31,0	;volatile
-   427  07FA                     l32:
-   428  07FA  0008               	return
-   429  07FB                     __end_of_setup:
-   430                           
-   431                           	psect	text2
-   432  07C0                     __ptext2:	
-   433 ;; *************** function _leer *****************
-   434 ;; Defined at:
-   435 ;;		line 121 in file "main.c"
-   436 ;; Parameters:    Size  Location     Type
-   437 ;;		None
-   438 ;; Auto vars:     Size  Location     Type
-   439 ;;		None
-   440 ;; Return value:  Size  Location     Type
-   441 ;;                  1    wreg      void 
-   442 ;; Registers used:
-   443 ;;		None
-   444 ;; Tracked objects:
-   445 ;;		On entry : 0/0
-   446 ;;		On exit  : 0/0
-   447 ;;		Unchanged: 0/0
-   448 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-   449 ;;      Params:         0       0       0       0       0
-   450 ;;      Locals:         0       0       0       0       0
-   451 ;;      Temps:          0       0       0       0       0
-   452 ;;      Totals:         0       0       0       0       0
-   453 ;;Total ram usage:        0 bytes
-   454 ;; Hardware stack levels used:    1
-   455 ;; This function calls:
-   456 ;;		Nothing
-   457 ;; This function is called by:
-   458 ;;		_main
-   459 ;; This function uses a non-reentrant model
-   460 ;;
-   461                           
-   462                           
-   463                           ;psect for function _leer
-   464  07C0                     _leer:
-   465  07C0                     l35:	
-   466                           ;incstack = 0
-   467                           ; Regs used in _leer: []
-   468                           
-   469  07C0  0008               	return
-   470  07C1                     __end_of_leer:
-   471  007E                     btemp	set	126	;btemp
-   472  007E                     wtemp0	set	126
-   473                           
-   474                           	psect	config
-   475                           
-   476                           ;Config register CONFIG1 @ 0x2007
-   477                           ;	Oscillator Selection bits
-   478                           ;	FOSC = INTRC_NOCLKOUT, INTOSCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O f
+   377                           ;main.c: 100:     TRISC = 0;
+   378  07DA  1683               	bsf	3,5	;RP0=1, select bank1
+   379  07DB  1303               	bcf	3,6	;RP1=0, select bank1
+   380  07DC  0187               	clrf	7	;volatile
+   381  07DD                     l639:
+   382                           
+   383                           ;main.c: 101:     PORTC = 0;
+   384  07DD  1283               	bcf	3,5	;RP0=0, select bank0
+   385  07DE  1303               	bcf	3,6	;RP1=0, select bank0
+   386  07DF  0187               	clrf	7	;volatile
+   387  07E0                     l641:
+   388                           
+   389                           ;main.c: 104:     INTCONbits.GIE = 1;
+   390  07E0  178B               	bsf	11,7	;volatile
+   391  07E1                     l643:
+   392                           
+   393                           ;main.c: 105:     INTCONbits.PEIE = 1;
+   394  07E1  170B               	bsf	11,6	;volatile
+   395  07E2                     l645:
+   396                           
+   397                           ;main.c: 106:     PIE1bits.ADIE = 1;
+   398  07E2  1683               	bsf	3,5	;RP0=1, select bank1
+   399  07E3  1303               	bcf	3,6	;RP1=0, select bank1
+   400  07E4  170C               	bsf	12,6	;volatile
+   401  07E5                     l647:
+   402                           
+   403                           ;main.c: 109:     ADCON0bits.CHS = 1;
+   404  07E5  1283               	bcf	3,5	;RP0=0, select bank0
+   405  07E6  1303               	bcf	3,6	;RP1=0, select bank0
+   406  07E7  081F               	movf	31,w	;volatile
+   407  07E8  39C3               	andlw	-61
+   408  07E9  3804               	iorlw	4
+   409  07EA  009F               	movwf	31	;volatile
+   410  07EB                     l649:
+   411                           
+   412                           ;main.c: 110:     ADCON1bits.VCFG0 = 0;
+   413  07EB  1683               	bsf	3,5	;RP0=1, select bank1
+   414  07EC  1303               	bcf	3,6	;RP1=0, select bank1
+   415  07ED  121F               	bcf	31,4	;volatile
+   416  07EE                     l651:
+   417                           
+   418                           ;main.c: 111:     ADCON1bits.VCFG1 = 0;
+   419  07EE  129F               	bcf	31,5	;volatile
+   420  07EF                     l653:
+   421                           
+   422                           ;main.c: 112:     ADCON0bits.ADCS = 3;
+   423  07EF  30C0               	movlw	192
+   424  07F0  1283               	bcf	3,5	;RP0=0, select bank0
+   425  07F1  1303               	bcf	3,6	;RP1=0, select bank0
+   426  07F2  049F               	iorwf	31,f	;volatile
+   427  07F3                     l655:
+   428                           
+   429                           ;main.c: 113:     ADCON1bits.ADFM = 0;
+   430  07F3  1683               	bsf	3,5	;RP0=1, select bank1
+   431  07F4  1303               	bcf	3,6	;RP1=0, select bank1
+   432  07F5  139F               	bcf	31,7	;volatile
+   433  07F6                     l657:
+   434                           
+   435                           ;main.c: 114:     ADCON0bits.GO_DONE = 1;
+   436  07F6  1283               	bcf	3,5	;RP0=0, select bank0
+   437  07F7  1303               	bcf	3,6	;RP1=0, select bank0
+   438  07F8  149F               	bsf	31,1	;volatile
+   439  07F9                     l659:
+   440                           
+   441                           ;main.c: 115:     ADCON0bits.ADON = 1;
+   442  07F9  141F               	bsf	31,0	;volatile
+   443  07FA                     l38:
+   444  07FA  0008               	return
+   445  07FB                     __end_of_setup:
+   446                           
+   447                           	psect	text2
+   448  07B1                     __ptext2:	
+   449 ;; *************** function _leer *****************
+   450 ;; Defined at:
+   451 ;;		line 123 in file "main.c"
+   452 ;; Parameters:    Size  Location     Type
+   453 ;;		None
+   454 ;; Auto vars:     Size  Location     Type
+   455 ;;		None
+   456 ;; Return value:  Size  Location     Type
+   457 ;;                  1    wreg      void 
+   458 ;; Registers used:
+   459 ;;		wreg
+   460 ;; Tracked objects:
+   461 ;;		On entry : 0/0
+   462 ;;		On exit  : 0/0
+   463 ;;		Unchanged: 0/0
+   464 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   465 ;;      Params:         0       0       0       0       0
+   466 ;;      Locals:         0       0       0       0       0
+   467 ;;      Temps:          1       0       0       0       0
+   468 ;;      Totals:         1       0       0       0       0
+   469 ;;Total ram usage:        1 bytes
+   470 ;; Hardware stack levels used:    1
+   471 ;; This function calls:
+   472 ;;		Nothing
+   473 ;; This function is called by:
+   474 ;;		_main
+   475 ;; This function uses a non-reentrant model
+   476 ;;
+   477                           
+   478                           
+   479                           ;psect for function _leer
+   480  07B1                     _leer:
+   481  07B1                     l661:	
+   482                           ;incstack = 0
+   483                           ; Regs used in _leer: [wreg]
+   484                           
+   485                           
+   486                           ;main.c: 124:     pot = ADRESH;
+   487  07B1  1283               	bcf	3,5	;RP0=0, select bank0
+   488  07B2  1303               	bcf	3,6	;RP1=0, select bank0
+   489  07B3  081E               	movf	30,w	;volatile
+   490  07B4  00F1               	movwf	??_leer
+   491  07B5  0871               	movf	??_leer,w
+   492  07B6  00F0               	movwf	_pot
+   493                           
+   494                           ;main.c: 125:     PORTC = pot;
+   495  07B7  0870               	movf	_pot,w
+   496  07B8  0087               	movwf	7	;volatile
+   497  07B9                     l663:
+   498                           
+   499                           ;main.c: 126:     ADCON0bits.GO_DONE = 1;
+   500  07B9  149F               	bsf	31,1	;volatile
+   501  07BA                     l41:
+   502  07BA  0008               	return
+   503  07BB                     __end_of_leer:
+   504  007E                     btemp	set	126	;btemp
+   505  007E                     wtemp0	set	126
+   506                           
+   507                           	psect	config
+   508                           
+   509                           ;Config register CONFIG1 @ 0x2007
+   510                           ;	Oscillator Selection bits
+   511                           ;	FOSC = INTRC_NOCLKOUT, INTOSCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O f
       +                          unction on RA7/OSC1/CLKIN
-   479                           ;	Watchdog Timer Enable bit
-   480                           ;	WDTE = OFF, WDT disabled and can be enabled by SWDTEN bit of the WDTCON register
-   481                           ;	Power-up Timer Enable bit
-   482                           ;	PWRTE = OFF, PWRT disabled
-   483                           ;	RE3/MCLR pin function select bit
-   484                           ;	MCLRE = OFF, RE3/MCLR pin function is digital input, MCLR internally tied to VDD
-   485                           ;	Code Protection bit
-   486                           ;	CP = OFF, Program memory code protection is disabled
-   487                           ;	Data Code Protection bit
-   488                           ;	CPD = OFF, Data memory code protection is disabled
-   489                           ;	Brown Out Reset Selection bits
-   490                           ;	BOREN = OFF, BOR disabled
-   491                           ;	Internal External Switchover bit
-   492                           ;	IESO = OFF, Internal/External Switchover mode is disabled
-   493                           ;	Fail-Safe Clock Monitor Enabled bit
-   494                           ;	FCMEN = OFF, Fail-Safe Clock Monitor is disabled
-   495                           ;	Low Voltage Programming Enable bit
-   496                           ;	LVP = OFF, RB3 pin has digital I/O, HV on MCLR must be used for programming
-   497                           ;	In-Circuit Debugger Mode bit
-   498                           ;	DEBUG = 0x1, unprogrammed default
-   499  2007                     	org	8199
-   500  2007  20D4               	dw	8404
-   501                           
-   502                           ;Config register CONFIG2 @ 0x2008
-   503                           ;	Brown-out Reset Selection bit
-   504                           ;	BOR4V = BOR40V, Brown-out Reset set to 4.0V
-   505                           ;	Flash Program Memory Self Write Enable bits
-   506                           ;	WRT = OFF, Write protection off
-   507  2008                     	org	8200
-   508  2008  3FFF               	dw	16383
+   512                           ;	Watchdog Timer Enable bit
+   513                           ;	WDTE = OFF, WDT disabled and can be enabled by SWDTEN bit of the WDTCON register
+   514                           ;	Power-up Timer Enable bit
+   515                           ;	PWRTE = OFF, PWRT disabled
+   516                           ;	RE3/MCLR pin function select bit
+   517                           ;	MCLRE = OFF, RE3/MCLR pin function is digital input, MCLR internally tied to VDD
+   518                           ;	Code Protection bit
+   519                           ;	CP = OFF, Program memory code protection is disabled
+   520                           ;	Data Code Protection bit
+   521                           ;	CPD = OFF, Data memory code protection is disabled
+   522                           ;	Brown Out Reset Selection bits
+   523                           ;	BOREN = OFF, BOR disabled
+   524                           ;	Internal External Switchover bit
+   525                           ;	IESO = OFF, Internal/External Switchover mode is disabled
+   526                           ;	Fail-Safe Clock Monitor Enabled bit
+   527                           ;	FCMEN = OFF, Fail-Safe Clock Monitor is disabled
+   528                           ;	Low Voltage Programming Enable bit
+   529                           ;	LVP = OFF, RB3 pin has digital I/O, HV on MCLR must be used for programming
+   530                           ;	In-Circuit Debugger Mode bit
+   531                           ;	DEBUG = 0x1, unprogrammed default
+   532  2007                     	org	8199
+   533  2007  20D4               	dw	8404
+   534                           
+   535                           ;Config register CONFIG2 @ 0x2008
+   536                           ;	Brown-out Reset Selection bit
+   537                           ;	BOR4V = BOR40V, Brown-out Reset set to 4.0V
+   538                           ;	Flash Program Memory Self Write Enable bits
+   539                           ;	WRT = OFF, Write protection off
+   540  2008                     	org	8200
+   541  2008  3FFF               	dw	16383
 
 Data Sizes:
     Strings     0
@@ -532,7 +565,7 @@ Data Sizes:
 
 Auto Spaces:
     Space          Size  Autos    Used
-    COMMON           14      0       1
+    COMMON           14      1       2
     BANK0            80      0       0
     BANK1            80      0       0
     BANK3            96      0       0
@@ -544,7 +577,7 @@ Pointer List with Targets:
 
 Critical Paths under _main in COMMON
 
-    None.
+    _main->_leer
 
 Critical Paths under _main in BANK0
 
@@ -573,7 +606,8 @@ Call Graph Tables:
  ---------------------------------------------------------------------------------
  (1) _setup                                                0     0      0       0
  ---------------------------------------------------------------------------------
- (1) _leer                                                 0     0      0       0
+ (1) _leer                                                 1     1      0       0
+                                              0 COMMON     1     1      0
  ---------------------------------------------------------------------------------
  Estimated maximum stack depth 1
  ---------------------------------------------------------------------------------
@@ -590,13 +624,13 @@ BITCOMMON            E      0       0       0        0.0%
 EEDATA             100      0       0       0        0.0%
 NULL                 0      0       0       0        0.0%
 CODE                 0      0       0       0        0.0%
-COMMON               E      0       1       1        7.1%
+COMMON               E      1       2       1       14.3%
 BITSFR0              0      0       0       1        0.0%
 SFR0                 0      0       0       1        0.0%
 BITSFR1              0      0       0       2        0.0%
 SFR1                 0      0       0       2        0.0%
 STACK                0      0       0       2        0.0%
-ABS                  0      0       1       3        0.0%
+ABS                  0      0       2       3        0.0%
 BITBANK0            50      0       0       4        0.0%
 BITSFR3              0      0       0       4        0.0%
 SFR3                 0      0       0       4        0.0%
@@ -609,28 +643,30 @@ BITBANK3            60      0       0       8        0.0%
 BANK3               60      0       0       9        0.0%
 BITBANK2            60      0       0      10        0.0%
 BANK2               60      0       0      11        0.0%
-DATA                 0      0       1      12        0.0%
+DATA                 0      0       2      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.31 build 20201012212115 
-Symbol Table                                                                                   Thu Feb 18 12:22:30 2021
+Symbol Table                                                                                   Fri Feb 19 08:19:07 2021
 
-                     l32 07FA                       l35 07C0                       u10 07CC  
-                     u11 07CB                      l631 07E0                      l641 07EE  
-                    l633 07E1                      l643 07EF                      l635 07E2  
-                    l627 07D5                      l651 07C1                      l645 07F3  
-                    l637 07E5                      l629 07DD                      l653 07C6  
-                    l647 07F6                      l639 07EB                      l655 07CC  
-                    l649 07F9                      _pot 0070                     _main 07C1  
-                   _leer 07C0                     btemp 007E                     start 0000  
-                  ?_main 0000                    ?_leer 0000                    _ANSEL 0188  
-                  _PORTA 0005                    _TRISA 0085                    _setup 07D5  
+                     l41 07BA                       l38 07FA                       u10 07C6  
+                     u11 07C5                      l641 07E0                      l633 07CF  
+                    l651 07EE                      l643 07E1                      l635 07D7  
+                    l661 07B1                      l653 07EF                      l645 07E2  
+                    l637 07DA                      l663 07B9                      l655 07F3  
+                    l647 07E5                      l639 07DD                      l657 07F6  
+                    l649 07EB                      l665 07BB                      l659 07F9  
+                    l667 07C0                      l669 07C6                      _pot 0070  
+                   _main 07BB                     _leer 07B1                     btemp 007E  
+                   start 0000                    ?_main 0071                    ?_leer 0071  
+                  _ANSEL 0188                    _PORTA 0005                    _PORTC 0007  
+                  _TRISA 0085                    _TRISC 0087                    _setup 07CF  
                   status 0003                    wtemp0 007E          __initialization 07FB  
-           __end_of_main 07D5             __end_of_leer 07C1                   ??_main 0000  
-                 ??_leer 0000                   ?_setup 0000  __end_of__initialization 07FC  
-         __pcstackCOMMON 0000            __end_of_setup 07FB                  ??_setup 0000  
-             __pmaintext 07C1                  __ptext1 07D5                  __ptext2 07C0  
-   end_of_initialization 07FC      start_initialization 07FB              __pbssCOMMON 0070  
-              ___latbits 0002           __size_of_setup 0026                 _PIE1bits 008C  
-             _ADCON0bits 001F               _ADCON1bits 009F            __size_of_main 0014  
-          __size_of_leer 0001               _INTCONbits 000B  
+           __end_of_main 07CF             __end_of_leer 07BB                   ??_main 0072  
+                 ??_leer 0071                   _ADRESH 001E                   ?_setup 0071  
+__end_of__initialization 07FC           __pcstackCOMMON 0071            __end_of_setup 07FB  
+                ??_setup 0071               __pmaintext 07BB                  __ptext1 07CF  
+                __ptext2 07B1     end_of_initialization 07FC      start_initialization 07FB  
+            __pbssCOMMON 0070                ___latbits 0002           __size_of_setup 002C  
+               _PIE1bits 008C               _ADCON0bits 001F               _ADCON1bits 009F  
+          __size_of_main 0014            __size_of_leer 000A               _INTCONbits 000B  

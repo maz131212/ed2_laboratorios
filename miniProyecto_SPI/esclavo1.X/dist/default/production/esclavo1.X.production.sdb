@@ -15,11 +15,13 @@
 [v _main main `(v  1 e 1 0 ]
 "93
 [v _setup setup `(v  1 e 1 0 ]
-"121
+"123
 [v _leer leer `(v  1 e 1 0 ]
 "166 /Applications/microchip/mplabx/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f887.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
-[s S79 . 1 `uc 1 RBIF 1 0 :1:0 
+"290
+[v _PORTC PORTC `VEuc  1 e 1 @7 ]
+[s S81 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -29,13 +31,15 @@
 `uc 1 GIE 1 0 :1:7 
 ]
 "482
-[s S88 . 1 `uc 1 . 1 0 :2:0 
+[s S90 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 TMR0IE 1 0 :1:5 
 ]
-[u S93 . 1 `S79 1 . 1 0 `S88 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES93  1 e 1 @11 ]
+[u S95 . 1 `S81 1 . 1 0 `S90 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES95  1 e 1 @11 ]
+"1238
+[v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
 [s S26 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :4:2 
@@ -61,7 +65,9 @@
 [v _ADCON0bits ADCON0bits `VES46  1 e 1 @31 ]
 "1416
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
-[s S111 . 1 `uc 1 TMR1IE 1 0 :1:0 
+"1540
+[v _TRISC TRISC `VEuc  1 e 1 @135 ]
+[s S113 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSPIE 1 0 :1:3 
@@ -70,20 +76,22 @@
 `uc 1 ADIE 1 0 :1:6 
 ]
 "1718
-[u S119 . 1 `S111 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES119  1 e 1 @140 ]
-[s S130 . 1 `uc 1 . 1 0 :4:0 
+[u S121 . 1 `S113 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES121  1 e 1 @140 ]
+[s S132 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 VCFG0 1 0 :1:4 
 `uc 1 VCFG1 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 ADFM 1 0 :1:7 
 ]
 "2991
-[u S136 . 1 `S130 1 . 1 0 ]
-[v _ADCON1bits ADCON1bits `VES136  1 e 1 @159 ]
+[u S138 . 1 `S132 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES138  1 e 1 @159 ]
 "3387
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
-"69 /Users/axelmazariegos/Documents/GitHub/ed2_laboratorios/miniProyecto_SPI/esclavo1.X/main.c
+"48 /Users/axelmazariegos/Documents/GitHub/ed2_laboratorios/miniProyecto_SPI/esclavo1.X/main.c
+[v _pot pot `uc  1 e 1 0 ]
+"69
 [v _main main `(v  1 e 1 0 ]
 {
 "85
@@ -91,10 +99,10 @@
 "93
 [v _setup setup `(v  1 e 1 0 ]
 {
-"115
+"117
 } 0
-"121
+"123
 [v _leer leer `(v  1 e 1 0 ]
 {
-"124
+"127
 } 0
